@@ -11,8 +11,7 @@ namespace EdabitTest
     {
         static void Main(string[] args)
         {
-            var r = ConsecutiveNumbers.CanConsecutiveNumbers(new[] { 5, 1, 4, 3, 2, 8 });
-            Console.WriteLine(r);
+            var r = Parseltongue.IsParseltongue("Sshe ssselects to eat that apple. ");
         }
     }
 }

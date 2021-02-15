@@ -14,7 +14,6 @@ namespace EdabitTest.Hard
             {
                 if (!words[i-1][^1].Equals(words[i][0])) boolean = false;
             }
-
             return boolean;
         }
     }

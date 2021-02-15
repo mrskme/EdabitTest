@@ -9,12 +9,14 @@ namespace EdabitTest.Hard
     {
         public static bool CanConsecutiveNumbers(int[] numbers)
         {
-            Array.Sort(numbers);
-            var noDuplicates = numbers.Distinct();
-            bool boolean = false;
-            for (var i = 1; i < numbers.Length + 1; i++) //numbers.length + 1 = 7
+            var noDuplicates = numbers.Distinct().ToArray();
+            Array.Sort(noDuplicates);
+
+            bool boolean = true;
+            for (var i = 0; i < numbers.Length; i++) //numbers.length = 6
             {
-                if (numbers[i-1] != (numbers[i] + 1) || numbers[i-1] != numbers[i]) boolean = true;
+                var canIndexMinusOne = i != 0 ? i - 1 : i; //her må det fikses
+                if (noDuplicates[canIndexMinusOne] == noDuplicates[i]-1) boolean = false;
             }
             return !boolean;
         }
